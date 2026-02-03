@@ -1,125 +1,171 @@
-# Customer Segmentation using Predictive Analytics
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Segmentation using Predictive Analytics</title>
+</head>
 
-## 📌 Project Overview
-This project applies **predictive analytics and machine learning** techniques to segment retail customers based on their **transactional behaviour and campaign engagement**.  
-The objective is to identify meaningful customer groups and translate analytical insights into **actionable marketing strategies** that improve customer engagement, loyalty, and revenue.
+<body>
 
-The analysis combines:
-- **Unsupervised learning (K-Means clustering)** for value-based segmentation  
-- **Supervised learning (Classification Tree)** for product-level and coupon engagement insights  
+<h1>Customer Segmentation using Predictive Analytics</h1>
 
-📄 *Full academic report available in this repository* :contentReference[oaicite:0]{index=0}
+<h2>Project Overview</h2>
+<p>
+This project applies predictive analytics and machine learning techniques to segment retail
+customers based on their transactional behaviour and campaign engagement.
+The objective is to identify meaningful customer groups and translate analytical insights into
+actionable marketing strategies that improve customer engagement, loyalty, and revenue.
+</p>
 
----
+<p>The analysis combines:</p>
+<ul>
+    <li>Unsupervised learning using K-Means clustering for value-based segmentation</li>
+    <li>Supervised learning using a Classification Tree for product-level and coupon engagement insights</li>
+</ul>
 
-## ❓ Problem Statement
+<p>
+A full academic report is available in this repository.
+</p>
+
+<hr>
+
+<h2>Problem Statement</h2>
+<p>
 Retailers collect large volumes of customer transaction and campaign data, but often face challenges in:
-- Understanding heterogeneous customer behaviour
-- Identifying which customers respond to promotions
-- Designing targeted campaigns instead of generic marketing
+</p>
+<ul>
+    <li>Understanding heterogeneous customer behaviour</li>
+    <li>Identifying which customers respond to promotions</li>
+    <li>Designing targeted campaigns instead of generic marketing</li>
+</ul>
 
-The core problem is to **extract patterns from transactional and campaign data** and segment customers in a way that supports **data-driven decision-making**.
+<p>
+The core problem is to extract patterns from transactional and campaign data and segment customers
+in a way that supports data-driven decision-making.
+</p>
 
----
+<hr>
 
-## 📊 Data & Feature Engineering
+<h2>Data and Feature Engineering</h2>
+<p>
 Customer-level features were engineered from transactional and campaign datasets:
+</p>
 
-- **Purchase Frequency** – number of baskets per household  
-- **Total Spending** – actual spend after discounts  
-- **Campaign Response Rate** – ratio of redeemed campaigns to campaigns received  
+<ul>
+    <li>Purchase Frequency – number of baskets per household</li>
+    <li>Total Spending – actual spend after discounts</li>
+    <li>Campaign Response Rate – ratio of redeemed campaigns to campaigns received</li>
+</ul>
 
-For deeper behavioural insights, product-category spending features were created (e.g. grocery, health & wellness, automotive) and linked with coupon redemption behaviour.
+<p>
+For deeper behavioural insights, product-category spending features were created
+(for example grocery, health and wellness, and automotive) and linked with coupon
+redemption behaviour.
+</p>
 
----
+<hr>
 
-## 🧠 Methodology
+<h2>Methodology</h2>
 
-### 1️⃣ K-Means Clustering (Unsupervised)
-- Features were **standardised** to avoid scale bias
-- Optimal number of clusters identified using:
-  - Elbow Method
-  - Silhouette Score
-- **Three clusters** selected for best cohesion and separation
+<h3>K-Means Clustering (Unsupervised)</h3>
+<ul>
+    <li>Features were standardised to avoid scale bias</li>
+    <li>The optimal number of clusters was identified using the Elbow Method and Silhouette Score</li>
+    <li>Three clusters were selected for best cohesion and separation</li>
+</ul>
 
-Used to segment customers by **value and marketing susceptibility**.
+<p>
+This approach was used to segment customers by value and marketing susceptibility.
+</p>
 
----
+<h3>Classification Tree (Supervised)</h3>
+<p>
+Target variable: Coupon Redemption Frequency
+</p>
 
-### 2️⃣ Classification Tree (Supervised)
-- Target variable: **Coupon Redemption Frequency**
-  - Q0: No coupons redeemed  
-  - Q1: 1–3 coupons  
-  - Q2: 4–35 coupons  
-- Entropy used as split criterion
-- Tree depth limited to reduce overfitting
-- Balanced class weights applied
+<ul>
+    <li>Q0: No coupons redeemed</li>
+    <li>Q1: 1 to 3 coupons redeemed</li>
+    <li>Q2: 4 to 35 coupons redeemed</li>
+</ul>
 
-Used to understand **which product categories drive promotion engagement**.
+<ul>
+    <li>Entropy used as the split criterion</li>
+    <li>Tree depth limited to reduce overfitting</li>
+    <li>Balanced class weights applied</li>
+</ul>
 
----
+<p>
+This model was used to understand which product categories drive promotion engagement.
+</p>
 
-## 📈 Key Results
+<hr>
 
-### 🔹 K-Means Customer Segments
-1. **Low-Value, Low-Susceptibility Customers**  
-   - Lowest spend and purchase frequency  
-   - Minimal response to campaigns  
-   - Low engagement and brand loyalty  
+<h2>Key Results</h2>
 
-2. **Moderate-Value, High-Susceptibility Customers**  
-   - Moderate spending  
-   - Highest campaign response rate (~56%)  
-   - Strong potential for targeted marketing  
+<h3>K-Means Customer Segments</h3>
 
-3. **High-Value, Moderate-to-Low Susceptibility Customers**  
-   - Highest spending and purchase frequency  
-   - Less dependent on promotions  
-   - Core revenue-driving customers  
+<p><strong>Low-Value, Low-Susceptibility Customers</strong></p>
+<ul>
+    <li>Lowest spend and purchase frequency</li>
+    <li>Minimal response to campaigns</li>
+    <li>Low engagement and brand loyalty</li>
+</ul>
 
----
+<p><strong>Moderate-Value, High-Susceptibility Customers</strong></p>
+<ul>
+    <li>Moderate spending</li>
+    <li>Highest campaign response rate (approximately 56 percent)</li>
+    <li>Strong potential for targeted marketing</li>
+</ul>
 
-### 🔹 Classification Tree Insights
-- Grocery spending is the strongest predictor of coupon usage  
-- Q0 customers show low category engagement  
-- Q1 customers redeem coupons opportunistically  
-- Q2 customers are high spenders with strong promotion engagement across categories  
+<p><strong>High-Value, Moderate-to-Low Susceptibility Customers</strong></p>
+<ul>
+    <li>Highest spending and purchase frequency</li>
+    <li>Less dependent on promotions</li>
+    <li>Core revenue-driving customers</li>
+</ul>
 
----
+<h3>Classification Tree Insights</h3>
+<ul>
+    <li>Grocery spending is the strongest predictor of coupon usage</li>
+    <li>Q0 customers show low category engagement</li>
+    <li>Q1 customers redeem coupons opportunistically</li>
+    <li>Q2 customers are high spenders with strong promotion engagement across categories</li>
+</ul>
 
-## 💡 Business Recommendations
-- **Low-Value Customers**: Introductory offers and simple discounts  
-- **Moderate-Value Customers**: Loyalty programs, points-based rewards, cross-category bundles  
-- **High-Value Customers**: VIP programs, exclusive offers, early product access  
-- Simplify coupon redemption to reduce friction  
-- Replace generic campaigns with **segment-specific promotions**
+<hr>
 
----
+<h2>Business Recommendations</h2>
+<ul>
+    <li>Low-Value Customers: Introductory offers and simple discounts</li>
+    <li>Moderate-Value Customers: Loyalty programmes, points-based rewards, and cross-category bundles</li>
+    <li>High-Value Customers: VIP programmes, exclusive offers, and early product access</li>
+    <li>Simplify coupon redemption to reduce friction</li>
+    <li>Replace generic campaigns with segment-specific promotions</li>
+</ul>
 
-## ✅ Conclusion
-By combining **K-Means clustering** with **Classification Trees**, this project delivers a structured and interpretable approach to customer segmentation.  
-The results enable retailers to:
-- Identify high-impact customer groups  
-- Personalise marketing strategies  
-- Improve customer retention and revenue growth  
+<hr>
 
-This framework provides a strong foundation for **data-driven retail analytics** and personalised marketing strategies.
+<h2>Conclusion</h2>
+<p>
+By combining K-Means clustering with Classification Trees, this project delivers a structured
+and interpretable approach to customer segmentation.
+The results enable retailers to identify high-impact customer groups, personalise marketing
+strategies, and improve customer retention and revenue growth.
+</p>
 
----
+<p>
+This framework provides a strong foundation for data-driven retail analytics and
+personalised marketing strategies.
+</p>
 
-## 🛠️ Tools & Techniques
-- Python  
-- Pandas & NumPy  
-- Scikit-learn  
-- K-Means Clustering  
-- Classification Trees  
-- Data Standardisation & Feature Engineering  
+<hr>
 
----
-
-## 📁 Repository Structure
-- `Customer Segmentation.pdf` – Full academic report  
-- `README.md` – Project summary and insights  
-
----
-
+<h2>Tools and Techniques</h2>
+<ul>
+    <li>Python</li>
+    <li>Pandas and NumPy</li>
+    <li>Scikit-learn</li>
+    <li>K-Means Clustering</li>
+    <l
