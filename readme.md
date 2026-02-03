@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Customer Segmentation using Predictive Analytics</title>
+   
 </head>
 
 <body>
